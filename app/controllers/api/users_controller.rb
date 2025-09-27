@@ -34,7 +34,7 @@ module Api
           id: user.id,
           email: user.email,
           name: user.name,   
-          scores: user.scores.select("total_score, played_at, number_of_holes")       
+          scores: user.scores.map(&:serialize)     
         }
       }.to_json
     end
